@@ -1,9 +1,11 @@
 package com.drafire.spring_boot.dto;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
+//@PropertySource("classpath:application.properties")    //缺省的时候，使用的application.properties
 @ConfigurationProperties(prefix = "administrator")
 public class Administrator {
     private String username;
