@@ -19,4 +19,9 @@ public class UserServiceTest {
     public void getUser() {
         System.out.println(userService.getUser(2));
     }
+
+    @Test
+    public void getUserByMapper() {
+        System.out.println(userService.getUserByMapper(2));
+    }
 }

@@ -1,6 +1,8 @@
 package com.drafire.spring_boot.domain;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private int id;
     private double amount;
     private String name;
