@@ -13,7 +13,8 @@ public class AdministratorController {
     private Administrator administrator;
 
     @GetMapping("/get")
-    public void getAdministrator(){
+    public String getAdministrator(){
         System.out.println(administrator.toString());
+        return administrator.toString();
     }
 }
