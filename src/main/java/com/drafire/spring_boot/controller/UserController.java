@@ -1,6 +1,7 @@
 package com.drafire.spring_boot.controller;
 
-import com.drafire.spring_boot.dto.Administrator;
+import com.drafire.spring_boot.domain.User;
+import com.drafire.spring_boot.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,16 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/admin")
-@Api(value = "超级会员")
-public class AdministratorController {
+@RequestMapping("/user")
+@Api(description = "用户操作api")
+public class UserController {
     @Autowired
-    private Administrator administrator;
+    private UserService userService;
 
     @GetMapping("/get")
-    @ApiOperation("查询超级会员")
-    public String getAdministrator(){
-        System.out.println(administrator.toString());
-        return administrator.toString();
+    @ApiOperation("通过id获取用户信息")
+    public User getUser(int id) {
+        return userService.getUserByMapper(id);
     }
 }
