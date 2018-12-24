@@ -87,6 +87,20 @@
             <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
         <!--</dependency>-->
         <!--actuator依赖包-->
+
+        <!--websocket依赖包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <!--websocket依赖包-->
+
+        <!--thymeleaf依赖包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <!--thymeleaf依赖包-->
     </dependencies>
 
     <build>
