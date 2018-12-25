@@ -101,6 +101,22 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <!--thymeleaf依赖包-->
+
+        <!--spring security依赖包，如果开启了，会需要授权才能访问-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-security</artifactId>-->
+        <!--</dependency>-->
+        <!--spring security依赖包-->
+
+        <!--spring boot 热部署之devtools方式的依赖包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!--spring boot 热部署之devtools方式的依赖包-->
+
     </dependencies>
 
     <build>
@@ -116,6 +132,21 @@
                     <!--</execution>-->
                 <!--</executions>-->
             </plugin>
+
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+                <!--<dependencies>-->
+                    <!--&lt;!&ndash; spring热部署，如果这里加载不了springloaded，-->
+                    <!--可以像平时一样先从maven加载，就是把这个依赖贴到<dependencies></dependencies>里面。-->
+                    <!--另外，注意不要和spring-boot-devtools 混在一起用&ndash;&gt;-->
+                    <!--<dependency>-->
+                        <!--<groupId>org.springframework</groupId>-->
+                        <!--<artifactId>springloaded</artifactId>-->
+                        <!--<version>1.2.7.RELEASE</version>-->
+                    <!--</dependency>-->
+                <!--</dependencies>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 
