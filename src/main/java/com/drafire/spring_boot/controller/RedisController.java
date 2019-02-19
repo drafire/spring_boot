@@ -1,32 +1,31 @@
 package com.drafire.spring_boot.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.Serializable;
 
 @RestController
 public class RedisController {
     @Autowired
-    private RedisTemplate redisTemplate;
+    private StringRedisTemplate redisTemplate;
 
-    @GetMapping(value = "/redis/get")
-    public Object getRedis(String key){
+    @GetMapping(value = "/redis/get/{key}")
+    public Object getRedis(@PathVariable String key){
         Object object= redisTemplate.opsForValue().get(key);
         return object;
     }
 
-    @GetMapping(value = "/redis/set")
-    public Object setRedis(String key,String value){
+    @GetMapping(value = "/redis/set/{key}/{value}")
+    public Object setRedis(@PathVariable String key,@PathVariable String value){
         redisTemplate.opsForValue().set(key,value);
         return getRedis(key);
     }
 
-    @GetMapping(value = "/redis/delete")
-    public Object deleteRedis(String key){
-        redisTemplate.opsForValue().set(key,null);
-        return getRedis(key);
+    @GetMapping(value = "/redis/delete/{key}")
+    public String deleteRedis(@PathVariable String key){
+        redisTemplate.delete(key);
+        return "ok";
     }
 }
